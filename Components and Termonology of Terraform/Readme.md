@@ -1,3 +1,28 @@
 
 <h1> Providers : </h1>
 <p> how actually terraform interacts with cloud(ex: AWS , GCP,AZURE .. etc) or SAAS providers or Other API's ? By using plugins called "Providers" </p>
+<pre>
+For Interacting with <b>AWS</b>:
+                          provider "aws" {
+                            region = "ap-south-1"
+                            access_key = "YOUR_ACCESS_KEY"
+                            secret_key = "YOUR_SECRET_KEY"
+                          }
+</pre>
+<pre>
+For Interacting with <b>GOOGLE</b>:
+                          provider "google" {
+                            region = "us-central1"
+                            credentials = file("/path/to/your/credentials.json")
+                          }
+</pre>
+<pre>
+  For Interacting with <b>AZURE</b> :
+                        provider "azurerm" {
+                          features {}
+                          client_id       = "YOUR_CLIENT_ID"
+                          client_secret   = "YOUR_CLIENT_SECRET"
+                          subscription_id = "YOUR_SUBSCRIPTION_ID"
+                          tenant_id       = "YOUR_TENANT_ID"
+                        }
+</pre>
