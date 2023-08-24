@@ -1,0 +1,25 @@
+<h1>3.Variables</h1>
+<p>  what is need of these variables? </p>
+<p>              These variables are needed to use when reusing the same deploying infracture<p>
+<p> to improve dynamic programming instead of manually programming every time just dynamically changing variables values.</p>
+<pre>
+Create a file named main.tf:
+        provider "aws" {
+          region = "ap-south-1"
+        }
+
+        resource "aws_vpc" "vpc_name" {
+          cidr_block = var.cidr
+        }
+Create a file named variables.tf:
+
+        variable "cidr" {
+          description = "CIDR block for the VPC"
+          type        = string
+        }
+
+        
+Run the terraform apply command with the correct syntax:
+
+        terraform apply -var="cidr=10.0.0.0/16"
+</pre>
